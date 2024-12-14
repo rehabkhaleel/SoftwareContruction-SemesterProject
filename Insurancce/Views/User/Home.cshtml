@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto';
+            background-color:transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color:transparent;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            color:white;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            background: linear-gradient(to right, #83E1F9, #CDBFFC);
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+            .btn:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                background: linear-gradient(to left, #83E1F9, #CDBFFC);
+            }
+
+        .btn-primary {
+            background: linear-gradient(to right, #4B0082, #9400D3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #808080, #6A5ACD);
+        }
+
+        .btn-info {
+            background: linear-gradient(to right, #00CED1, #4682B4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(to right, #DC143C, #8B0000);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Your Dashboard</h2>
+        <div class="btn-group">
+            <a href="@Url.Action("ApplyPolicy", "User")" class="btn btn-primary">Apply for Policy</a>
+            <a href="@Url.Action("EditInfo", "User")" class="btn btn-secondary">Edit Info</a>
+            <a href="@Url.Action("CheckPolicyStatus", "User")" class="btn btn-info">Check Policy Status</a>
+            <a href="@Url.Action("SignOut", "User")" class="btn btn-danger">Sign Out</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+﻿/* General Body Styling */
+body {
+    font-family: 'Roboto'; /* Using Roboto font */
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #383082, #060311); /* Radial gradient background */
+    color: #FFFFFF; /* White font color */
+}
+
+/* Header / NavBar Styling */
+header {
+    color: white;
+    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+}
+
+
+    header h1 {
+        font-size: 4rem;
+        color: white;
+        margin: 50px auto;
+
+        font-weight: 900;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+/* Main Content Styling */
+main {
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 0px 20px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /*  Semi-transparent background */
+    border: 2px solid #4B39EF;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Card Styling */
+.card {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #4B39EF; /* Blue border */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+/* Heading Styling */
+h1, h2 {
+    color: yellow; /* Blue color for headings */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight:700;
+}
+
+/* Paragraph Text */
+p {
+    color: #CCCCCC; /* Light gray color for paragraph text */
+    font-weight:600;
+}
+
+/* Button Styling */
+button {
+    background-color: #4B39EF; /* Blue button color */
+    color: #FFFFFF; /* White text on button */
+    padding: 10px 0px;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+#acceptButton{
+    margin-bottom:60px;
+    width:100%;
+}
+
+    button:hover {
+        background-color: #3b30c9; /* Slightly darker blue color on hover */
+    }
+
+/* Popup Styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #2C2C2C; /* Dark gray background for better contrast */
+    color: #FFFFFF; /* White text color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-popup {
+    background-color: #4B39EF; /* Blue close button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+    .close-popup:hover {
+        background-color: #3b30c9; /* Slightly darker blue color on hover */
+    }
+
+
+
+/* Responsive Design - Mobile View */
+@media (max-width: 768px) {
+    /* Adjusting the margin and padding for smaller screens */
+    main {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    /* Card adjustments for mobile */
+    .card {
+        padding: 15px;
+    }
+
+    /* Button adjustments */
+    button {
+        width: 100%; /* Full width for the button on mobile */
+        padding: 12px 0;
+    }
+
+    /* Popup adjustments */
+    .popup-content {
+        width: 80%; /* Smaller width for the popup */
+        padding: 15px;
+    }
+
+    /* Header adjustments */
+    header {
+        padding: 0.5em 0;
+    }
+}
+
+/* Responsive Design - Tablet View */
+@media (max-width: 1024px) {
+    /* Adjusting the main content area for tablets */
+    main {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    /* Card adjustments for tablets */
+    .card {
+        padding: 18px;
+    }
+
+    /* Button adjustments */
+    button {
+        width: 100%; /* Full width for the button on tablets */
+        margin-bottom:20px;
+        
+    }
+}

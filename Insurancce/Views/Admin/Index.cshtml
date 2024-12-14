@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+}
+<link href="~/css/AdminIndex.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4 admin-user-head">Admin Dashboard</h2>
+
+    <!-- Users Section -->
+    <div class="mb-5">
+        <h3 class="text-warning text-center">Users</h3>
+        <table class="table custom-table shadow-sm">
+            <thead class="table">
+                <tr>
+                   
+                    <th>User Id</th>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Phone</th>
+                    <th>DOB</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in ViewBag.Users)
+                {
+                    <tr>
+                        
+                        <td>@user.id</td>
+                        <td>@user.name</td>
+                        <td>@user.username</td>
+                        <td>@user.phone_no</td>
+                        <td>@user.dob.ToShortDateString()</td>
+                        <td>@user.address</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Agents Section -->
+    <div class="mb-5">
+        <h3 class="text-primary text-center">Agents</h3>
+        <table class="table custom-table shadow-sm">
+            <thead class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var agent in ViewBag.Agents)
+                {
+                    <tr>
+                        <td>@agent.Agent_name</td>
+                        <td>@agent.Agent_contact</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Button Group for Actions -->
+    <div class="d-flex justify-content-between">
+        <a href="@Url.Action("RegisterAgent", "Account")" class="btn btn-primary btn-lg shadow-sm">Register Agent</a>
+        <a href="@Url.Action("SignOut", "User")" class="btn btn-danger btn-lg shadow-sm">Sign Out</a>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle (Optional for interactivity) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

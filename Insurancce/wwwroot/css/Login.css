@@ -1,0 +1,42 @@
+﻿body {
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto';
+    background: radial-gradient(circle, #383082, #060311); /* Radial gradient background */
+    
+}
+
+.center {
+    text-align: center;
+    margin:0 auto;
+}
+
+.heading {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 900;
+    color: white;
+}
+
+form {
+    max-width: 450px;
+    margin: 20px auto;
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+label {
+    font-size: 20px;
+    color: yellow;
+}
+
+.form-control {
+    background-color: white;
+}
+
+.btn {
+    margin: 5px;
+}

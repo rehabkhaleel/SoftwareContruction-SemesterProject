@@ -1,0 +1,144 @@
+﻿@model InsuranceManagementSystem.Models.PolicyModel
+
+@{
+    ViewBag.Title = "Apply Policy";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto';
+            background-color:transparent;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color:transparent; /* Slight transparency */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            color:white;
+        }
+
+        h2 {
+            text-align: center;
+            color:white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .form-control {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
+        }
+
+            .form-control:focus {
+                box-shadow: 0 0 5px #83E1F9;
+                outline: none;
+            }
+
+        .btn-primary {
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+            .btn-success:hover{
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            }
+
+        .text-danger {
+            color: #DC143C;
+            font-size: 0.9rem;
+        }
+
+        .alert {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert-danger {
+            background: linear-gradient(to right, #FF7F7F, #FF4F4F);
+            color: white;
+        }
+
+        .alert-info {
+            background: linear-gradient(to right, #83E1F9, #CDBFFC);
+            color: white;
+        }
+        .container{
+            margin-bottom:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Apply Policy</h2>
+
+        <form asp-controller="User" asp-action="ApplyPolicy" method="post">
+            <div class="form-group">
+                <label for="PolicyId">Select Policy</label>
+                <select asp-for="PolicyId" class="form-control" asp-items="@(new SelectList(ViewBag.PolicyList, "Id", "PolicyName"))">
+                    <option value="">-- Select Policy --</option>
+                </select>
+                <span asp-validation-for="PolicyId" class="text-danger"></span>
+            </div>
+            <input type="submit" value="Apply" class="btn btn-primary" />
+        </form>
+
+
+        @if (ViewData.ModelState.ErrorCount > 0)
+        {
+            <div class="alert alert-danger">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="alert alert-info">
+                @ViewBag.Message
+            </div>
+        }
+    </div>
+</body>
+</html>

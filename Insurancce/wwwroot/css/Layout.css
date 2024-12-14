@@ -1,0 +1,101 @@
+/* General Styling */
+body {
+    font-family: 'Roboto'; /* Using Roboto font */
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, #060311, #383082); /* Radial gradient background */
+    color: #FFFFFF; /* White font color */
+    position: relative;
+    min-height: 100%;
+    margin-bottom: 80px; /* Ensure content isn't hidden behind footer */
+}
+
+header {
+    background-color: transparent; /* Transparent background */
+    color: white;
+    text-align: center;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: transparent; /*dark color nav background*/
+    font: 500;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.nav-item a {
+    font-size: 18px;
+    padding: 0px 10px;
+}
+
+
+/* Footer Styling */
+/*.footer {
+    text-align: center;
+    padding: 0px 0;
+    background-color: #2B2464; 
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;*/ /* Ensure it spans the width */
+    /*box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);*/ /* Shadow effect */
+    /*display: flex;*/ /* Use flexbox for centering */
+    /*justify-content: center;*/ /* Horizontally center */
+    /*align-items: center;*/ /* Vertically center */
+    /*height:200px;
+}*/
+
+    .footer{
+        background-color:transparent;
+    }
+    .footer .container {
+        display: flex;
+        justify-content: space-between; /* Space between the logos and the privacy link */
+        align-items: center; /* Vertically align items in the footer */
+        flex-wrap: wrap; /* Ensure wrapping on small screens */
+        margin-bottom:50px;
+        color:white !important;
+        
+       
+    }
+
+.social-links {
+    display: flex;
+    justify-content: flex-start; /* Align logos to the left */
+}
+
+.privacy-link {
+    text-align: center;
+    flex-grow: 1; /* Ensure the privacy link takes up the remaining space */
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* Social Media Logos */
+.social-logo {
+    width: 40px; /* Adjust size */
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.8);
+    background-color: aliceblue;
+}
+
+    .social-logo:hover {
+        transform: scale(1.2); /* Slight zoom effect */
+        filter: brightness(1); /* Brighten on hover */
+    }
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .footer .container {
+        flex-direction: column; /* Stack elements on smaller screens */
+        text-align: center;
+    }
+
+    .social-links {
+        margin-bottom: 10px;
+    }
+}

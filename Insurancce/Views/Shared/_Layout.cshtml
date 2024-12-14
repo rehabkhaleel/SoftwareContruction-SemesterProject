@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Insurance</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Layout.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Insurancce.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" asp-area="" asp-controller="Account" asp-action="Login">
+                    <img src="~/images/logo-removebg-preview.png" alt="Insurance Logo" style="height: 60px;">
+                </a>
+
+                <!-- Toggle button for mobile view -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navbar links and buttons -->
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right side buttons (Login & Signup) -->
+                    <div class="d-flex">
+                        <a href="@Url.Action("Login", "Account")" class="btn btn-primary me-2">Login</a>
+                        <a href="@Url.Action("RegisterAgent", "Account")" class="btn btn-success me-2">Register Agent</a>
+                        <a href="@Url.Action("RegisterUser", "Account")" class="btn btn-success me-2">Register User</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <!-- Social Media Links -->
+            <div class="social-links d-flex align-items-center justify-content-start">
+                <a href="https://www.instagram.com" target="_blank" class="mx-2">
+                    <img src="~/images/insta-logo.png" alt="Instagram" class="social-logo" />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="mx-2">
+                    <img src="~/images/linkedin-logo.png" alt="LinkedIn" class="social-logo" />
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="mx-2">
+                    <img src="~/images/fb-logo.png" alt="Facebook" class="social-logo" />
+                </a>
+            </div>
+
+            <!-- Privacy and Other Links -->
+            <div class="privacy-link text-center mt-3 mt-md-0">
+                &copy; 2024 - Insurance System - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/Layout.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

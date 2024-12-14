@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="~/css/Index.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bg-page">
+        <div>
+            <h1>Secure. Simplify. Manage. Protect.</h1>
+            <p>
+                Managing your insurance has never been easier! Our Insurance Management System is a comprehensive, all-in-one platform crafted to meet the diverse needs of both individual policyholders and insurance providers. Whether you're securing coverage for your assets, managing multiple policies, or streamlining client services, our system offers tools to simplify every step of the process.
+            </p>
+            <p>
+                With an intuitive interface, powerful features, and robust security measures, we ensure that handling your insurance needs becomes a hassle-free experience. From tracking policy details to managing claims and accessing real-time updates, we empower you with the tools to take control of your insurance journey effortlessly.
+            </p>
+            <p>Explore our services and manage your insurance policies with ease. Learn <a href="@Url.Content("~/Home/Privacy")">more.</a></p>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3>User Authentication and Authorization</h3>
+                        <p>Ensure that users are securely authenticated and authorized based on their roles</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3>Policy Management</h3>
+                        <p>Users can add, view, and update insurance policies. Different insurance types such as Life, Home, and Auto will be supported, with individual details stored and processed.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3> Claims Processing</h3>
+                        <p>Provide functionality for users to file claims, track the status of claims, and interact with the insurance agents to resolve claim-related issues.</p>
+                    </div>
+                </div>
+            </div>
+            <!--Second row -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3>Payment Integration</h3>
+                        <p>Enable seamless payment transactions for policy purchases, renewals, and claims, using integrated payment gateways.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3>Policy Renewal and Updates</h3>
+                        <p>Provide reminders and processes for renewing insurance policies and updating coverage as per user preferences..</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-item">
+                        <h3>Real-time Notifications</h3>
+                        <p>Users are notified of policy updates, claim status changes, payment reminders, and other critical events via email or mobile alerts.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Life Insurance</h3>
+                        <p>Protect your loved ones with comprehensive life insurance coverage tailored to your needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Home Insurance</h3>
+                        <p>Secure your home and belongings with reliable home insurance policies that offer peace of mind.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <h3>Auto Insurance</h3>
+                        <p>Drive confidently knowing your vehicle and passengers are protected with our auto insurance solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-benders" id="codeBenders"></div>
+    </section>
+
+    <script src="~/js/Index.js"></script>
+</body>
+</html>

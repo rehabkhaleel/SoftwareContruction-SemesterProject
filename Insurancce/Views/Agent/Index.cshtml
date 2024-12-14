@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "Agent Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="~/css/AgentIndex.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container py-4">
+        <h2 class="admin-user-head text-center mb-4">Agent Dashboard</h2>
+
+        <!-- Inactive Policies Section -->
+        <h3 class="text-primary">Inactive Policies</h3>
+        <table class="table table-hover table-bordered text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Policy Id</th>
+                    <th>User Id</th>
+                    <th>Policy Name</th>
+                    <th>Date Registered</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in ViewBag.PendingPolicies)
+                {
+                    <tr>
+                        <td>@policy.PolicyId</td>
+                        <td>@policy.user_id</td>
+                        <td>@policy.policy_name</td>
+                        <td>@policy.date_registered.ToShortDateString()</td>
+                        <td>
+                            <form asp-action="ApprovePolicy" method="post">
+                                <input type="hidden" name="policyId" value="@policy.PolicyId" />
+                                <input type="hidden" name="policyName" value="@policy.policy_name" />
+                                <input type="hidden" name="userId" value="@policy.user_id" />
+                                <button type="submit" class="btn btn-success btn-sm">Approve</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+
+        <!-- Active Policies Section -->
+        <h3 class="text-warning">Active Policies</h3>
+        <table class="table table-hover table-bordered text-white">
+            <thead class="table-dark">
+                <tr>
+                    <th>Policy Id</th>
+                    <th>User Id</th>
+                    <th>Policy Name</th>
+                    <th>Date Registered</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in ViewBag.ActivePolicies)
+                {
+                    <tr>
+                        <td>@policy.PolicyId</td>
+                        <td>@policy.user_id</td>
+                        <td>@policy.policy_name</td>
+                        <td>@policy.date_registered.ToShortDateString()</td>
+                    </tr>
+                }
+             
+            </tbody>
+        </table>
+
+        <!-- Sign-Out Button -->
+        <div class="mt-4 text-end end-button">
+            <a href="@Url.Action("SignOut", "User")" class="btn btn-danger">Sign Out</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

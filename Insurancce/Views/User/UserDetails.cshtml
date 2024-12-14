@@ -1,0 +1,17 @@
+﻿@model InsuranceManagementSystem.Models.UserdetailsModel
+
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h2>User Details</h2>
+
+<div>
+    <p><strong>Name:</strong> @Model.name</p>
+    <p><strong>Username:</strong> @Model.username</p>
+    <p><strong>Phone Number:</strong> @Model.phone_no</p>
+    <p><strong>Date of Birth:</strong> @Model.dob.ToString("yyyy-MM-dd")</p>
+    <p><strong>Address:</strong> @Model.address</p>
+</div>
+<a href="@Url.Action("UserDetails", "User", new { userId = Model.user_id })" class="btn btn-primary">View Details</a>
+

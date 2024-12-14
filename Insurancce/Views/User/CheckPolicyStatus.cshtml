@@ -1,0 +1,99 @@
+﻿@model IEnumerable<InsuranceManagementSystem.Models.PolicyModel>
+
+@{
+    ViewBag.Title = "Check Policy Status";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #CDBFFC, #83E1F9);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 30px;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+            .table th {
+                background-color: #f8f9fa;
+            }
+
+            .table td, .table th {
+                padding: 15px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+        .btn-back {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+            .btn-back:hover {
+                background-color: #0056b3;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Your Policies</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Policy Name</th>
+                    <th>Date Registered</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var policy in Model)
+                {
+                    <tr>
+                        <td>@policy.policy_name</td>
+                        <td>@policy.date_registered.ToShortDateString()</td>
+                        <td>@policy.policy_status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <a href="@Url.Action("Index", "Home")" class="btn-back btn-success">Back to Dashboard</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

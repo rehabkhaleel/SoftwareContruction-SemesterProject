@@ -1,0 +1,89 @@
+﻿body {
+    background-color:transparent;
+    color:white;
+    font-family:'Roboto';
+
+
+}
+.admin-user-head{
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 900;
+    color: white;
+}
+}
+/*thead{
+    color:yellow;
+}
+table td{
+    color:black;
+}
+*/
+/* Custom Table Styles */
+.custom-table {
+    background: rgba(255, 255, 255, 0.5); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    border-collapse: separate;
+    border-spacing: 0;
+    color: white; /* White font color */
+    border: 2px solid #0d6efd; /* Blue border */
+}
+
+    /* Table Head */
+    .custom-table thead {
+        background-color: #1A153D !important; /* Dark background for header */
+        color: white;
+        border-bottom: 2px double #0d6efd; /* Blue border for header */
+    }
+
+    /* Table Rows */
+    .custom-table tbody tr {
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effect */
+        color:white;
+    }
+
+        /* Hover Effect */
+        .custom-table tbody tr:hover {
+            background-color: rgba(13, 110, 253, 0.3); /* Light blue hover color */
+            transform: scale(1.02); /* Slight scale effect */
+        }
+
+    /* Table Borders */
+    .custom-table th,
+    .custom-table td {
+        border: 1px solid #0d6efd; /* Blue border for table cells */
+        padding: 12px;
+    }
+
+    /* Responsive Font Sizes */
+    .custom-table th,
+    .custom-table td {
+        font-size: 16px;
+    }
+
+    /* Table Head Font Weight */
+    .custom-table thead th {
+        font-weight: 700;
+    }
+
+/* Table Shadow */
+.custom-table {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Section Headers */
+h3.text-warning,
+h3.text-primary {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Button Group */
+.btn {
+    transition: all 0.3s ease; /* Smooth button hover effects */
+}
+
+    .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }

@@ -1,0 +1,19 @@
+﻿@model InsuranceManagementSystem.Models.RequestModel
+
+@{
+    ViewBag.Title = "Handle Request";
+}
+
+<h2>Handle Request</h2>
+
+<form asp-controller="Request" asp-action="HandleRequest" method="post">
+    <div class="form-group">
+        <label for="Type">Type</label>
+        <input type="text" class="form-control" id="Type" name="Type" required />
+    </div>
+    <div class="form-group">
+        <label for="Data">Data</label>
+        <input type="text" class="form-control" id="Data" name="Data" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
